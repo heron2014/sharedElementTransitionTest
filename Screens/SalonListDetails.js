@@ -136,7 +136,7 @@ const SalonListDetails = ({navigation, route}) => {
                   <Animatable.View
                     animation={fadeInBottom}
                     delay={DURATION + 400 + index * 150}
-                    key={Math.random().toString()}
+                    key={index}
                     style={{marginBottom: SPACING}}>
                     <Text
                       style={{
@@ -153,7 +153,7 @@ const SalonListDetails = ({navigation, route}) => {
                             height: 100,
                             backgroundColor: 'yellow',
                             zIndex: 1000,
-                            marginBottom: 10
+                            marginBottom: 10,
                           }}
                           key={index}>
                           <TouchableOpacity

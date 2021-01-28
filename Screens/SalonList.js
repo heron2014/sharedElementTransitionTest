@@ -66,6 +66,7 @@ export default function SalonList({navigation}) {
       <SharedElement
         id="general.bg"
         style={[
+          {zIndex: 1},
           StyleSheet.absoluteFillObject,
           {transform: [{translateY: height}]},
         ]}>
@@ -77,6 +78,7 @@ export default function SalonList({navigation}) {
               transform: [{translateY: 0}],
               borderTopLeftRadius: 48,
               borderTopRightRadius: 48,
+              zIndex: 1,
             },
           ]}
         />
