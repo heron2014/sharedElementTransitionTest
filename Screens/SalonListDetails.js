@@ -89,13 +89,18 @@ const SalonListDetails = ({navigation, route}) => {
             StyleSheet.absoluteFillObject,
             {
               backgroundColor: 'white',
+              zIndex: 1,
               transform: [{translateY: -height + TOP_HEIGHT_HEIGHT}],
               borderTopLeftRadius: 32,
               borderTopRightRadius: 32,
             },
           ]}>
           <ScrollView
-            style={{flexGrow: 0, height: height - TOP_HEIGHT_HEIGHT}}
+            style={{
+              flexGrow: 0,
+              height: height - TOP_HEIGHT_HEIGHT,
+              zIndex: 2,
+            }}
             showsVerticalScrollIndicator={false}>
             <View
               style={{
@@ -107,8 +112,7 @@ const SalonListDetails = ({navigation, route}) => {
                 return (
                   <TouchableOpacity
                     key={index}
-                    onPress={() => console.log('HEllo')}
-                    style={{zIndex: 999}}>
+                    onPress={() => console.log('Hello')}>
                     <Animatable.View
                       animation="bounceIn"
                       delay={DURATION + index * 100}
@@ -143,33 +147,20 @@ const SalonListDetails = ({navigation, route}) => {
                     </Text>
                     {subcat.subcats.map((ii, index) => {
                       return (
-                        <Animatable.View
-                          key={Math.random().toString()}
-                          animation={fadeInBottom}
-                          delay={DURATION + 600 + index * 150}
+                        <View
                           style={{
-                            alignItems: 'center',
-                            flexDirection: 'row',
-                            marginLeft: SPACING,
-                          }}>
-                          <View
-                            style={{
-                              width: 4,
-                              height: 4,
-                              borderRadius: 4,
-                              backgroundColor: 'gold',
-                              marginRight: SPACING / 2,
-                            }}
-                          />
-                          <Text
-                            style={{
-                              fontSize: 13,
-                              margin: SPACING / 2,
-                            }}
-                            key={ii}>
-                            {ii}
-                          </Text>
-                        </Animatable.View>
+                            width: 140,
+                            height: 100,
+                            backgroundColor: 'yellow',
+                            zIndex: 1000,
+                            marginBottom: 10
+                          }}
+                          key={index}>
+                          <TouchableOpacity
+                            onPress={() => console.log('Pressed')}>
+                            <Text>Press me</Text>
+                          </TouchableOpacity>
+                        </View>
                       );
                     })}
                   </Animatable.View>
